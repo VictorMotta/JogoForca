@@ -1,0 +1,39 @@
+.top-game {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4% 10%;
+    margin: 0 auto;
+}
+
+.image-err img {
+    width: 50%;
+}
+
+.choose-word-show-word {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2% 0;
+}
+
+.choose-word-show-word button {
+    width: 200px;
+    height: 60px;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    background: #27ae60;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-top: 20px;
+}
+
+.chute {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 68px;
+}

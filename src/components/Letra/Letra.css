@@ -1,0 +1,27 @@
+.letraDesabilitada {
+    width: 40px;
+    height: 40px;
+    background: #9faab5;
+    border: 1px solid #7aa7c7;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #798a9f;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.letraHabilitada {
+    width: 40px;
+    height: 40px;
+    background: #e1ecf4;
+    border: 1px solid #7aa7c7;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #39739d;
+    margin: 5px;
+    cursor: pointer;
+}
