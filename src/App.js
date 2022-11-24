@@ -35,7 +35,7 @@ function App({ palavras }) {
     const numeroAleatorio = Math.floor(Math.random() * palavras.length);
     const [chuteDigitado, setChuteDigitado] = useState("");
     const [palavraChave, setPalavraChave] = useState("");
-    const [palavraChaveUnderline, setPalavraChaveUnderline] = useState([]);
+    const [palavraChaveUnderline, setPalavraChaveUnderline] = useState();
     const [letrasEscolhidas, setLetrasEscolhidas] = useState([]);
     const [prontoParaJogar, setProntoParaJogar] = useState(false);
 
@@ -44,20 +44,35 @@ function App({ palavras }) {
         const listaChave = palavraChaveAlterada.split("");
         setPalavraChave(palavraChaveAlterada);
         alteraPalavraParaUnderline(listaChave);
+        setLetrasEscolhidas([]);
     }
 
     function alteraPalavraParaUnderline(lista) {
         const palavraUnderline = lista.map(() => "_ ");
         setProntoParaJogar(true);
-        setPalavraChaveUnderline([palavraUnderline]);
+        setPalavraChaveUnderline(palavraUnderline);
     }
+    console.log(palavraChave);
 
     function letraClicada(letra) {
         if (!letrasEscolhidas.includes(letra)) {
             setLetrasEscolhidas([...letrasEscolhidas, letra]);
+            verificaLetraVerdadeiro(letra);
         }
     }
 
+    function verificaLetraVerdadeiro(letra) {
+        const listaPalavra = palavraChave.split("");
+        listaPalavra.map((item, i) => {
+            item === letra ? alteraAcertou(item, i) : console.log("errou");
+        });
+    }
+
+    function alteraAcertou(letra, i) {
+        const listaPalavra = palavraChaveUnderline;
+        listaPalavra[i] = letra;
+        console.log(listaPalavra);
+    }
     function enviaInputChute() {
         console.log(chuteDigitado);
         setChuteDigitado("");
@@ -70,7 +85,7 @@ function App({ palavras }) {
             return "letraHabilitada";
         }
     }
-    console.log(letrasEscolhidas);
+
     return (
         <>
             <Jogo palavra={palavraChaveUnderline} alteraPalavra={() => escolhePalavra(palavras)} />
