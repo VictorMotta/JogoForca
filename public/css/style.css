@@ -4,3 +4,14 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+
+.container-letters {
+    width: 48%;
+    margin: 30px auto;
+}
+
+@media (max-width: 1024px) {
+    .container-letters {
+        width: 65%;
+    }
+}
