@@ -5,6 +5,7 @@
     justify-content: space-between;
     padding: 4% 10%;
     margin: 0 auto;
+    position: relative;
 }
 
 .image-err img {
@@ -17,6 +18,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 2% 0;
+    position: relative;
 }
 
 .choose-word-show-word button {
@@ -37,4 +39,39 @@
     font-size: 50px;
     font-weight: 700;
     line-height: 68px;
+}
+
+@media (max-width: 850px) {
+    .top-game {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-err {
+        width: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+    }
+
+    .image-err img {
+        width: 35%;
+        background-color: #fff;
+    }
+
+    .choose-word-show-word {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .choose-word-show-word button {
+        margin-top: 50px;
+    }
+
+    .chute {
+        text-align: center;
+        width: 100%;
+        height: 15%;
+        background-color: #fff;
+        padding-top: 20px;
+    }
 }
