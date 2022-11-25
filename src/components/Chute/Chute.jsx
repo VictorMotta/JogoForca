@@ -1,11 +1,37 @@
 import "./Chute.css";
 
-const Chute = (props) => {
+const Chute = ({
+    chuteDigitado,
+    setChuteDigitado,
+    palavraChave,
+    setErroImagem,
+    prontoParaJogar,
+    ganhouTrocaCor,
+    perdeuTrocaCor,
+}) => {
+    function enviaInputChute() {
+        if (prontoParaJogar) {
+            if (chuteDigitado === palavraChave) {
+                ganhouTrocaCor();
+            } else {
+                perdeuTrocaCor();
+                setErroImagem("./assets/forca6.png");
+            }
+        }
+    }
+
     return (
         <div className='container-chute'>
             <h1>Já sei a palavra!</h1>
-            <input onChange={props.onchange} type='text' value={props.value} />
-            <button onClick={props.clickChuteDigitado}>Chutar</button>
+            <input
+                data-test='guess-input'
+                onChange={(e) => setChuteDigitado(e.target.value)}
+                type='text'
+                value={chuteDigitado}
+            />
+            <button data-test='guess-button' onClick={enviaInputChute}>
+                Chutar
+            </button>
         </div>
     );
 };

@@ -32,77 +32,74 @@ function App({ palavras }) {
         "y",
         "z",
     ];
-    const numeroAleatorio = Math.floor(Math.random() * palavras.length);
+
+    let numeroAleatorio = Math.floor(Math.random() * palavras.length);
     const [chuteDigitado, setChuteDigitado] = useState("");
     const [palavraChave, setPalavraChave] = useState("");
     const [palavraChaveUnderline, setPalavraChaveUnderline] = useState();
     const [letrasEscolhidas, setLetrasEscolhidas] = useState([]);
     const [prontoParaJogar, setProntoParaJogar] = useState(false);
+    const [contadorDeErro, setContadorDeErro] = useState(0);
+    const [erroImagem, setErroImagem] = useState("./assets/forca0.png");
+    const [ganhouPerdeu, setGanhouPerdeu] = useState("");
+    const [corGanhouPerdeu, setCorGanhouPerdeu] = useState("#000000");
 
-    function escolhePalavra(listaPalavras) {
-        const palavraChaveAlterada = listaPalavras[numeroAleatorio];
-        const listaChave = palavraChaveAlterada.split("");
-        setPalavraChave(palavraChaveAlterada);
-        alteraPalavraParaUnderline(listaChave);
-        setLetrasEscolhidas([]);
+    function ganhouTrocaCor() {
+        setCorGanhouPerdeu("#27AE60");
     }
 
-    function alteraPalavraParaUnderline(lista) {
-        const palavraUnderline = lista.map(() => "_ ");
-        setProntoParaJogar(true);
-        setPalavraChaveUnderline(palavraUnderline);
-    }
-    console.log(palavraChave);
-
-    function letraClicada(letra) {
-        if (!letrasEscolhidas.includes(letra)) {
-            setLetrasEscolhidas([...letrasEscolhidas, letra]);
-            verificaLetraVerdadeiro(letra);
-        }
+    function perdeuTrocaCor() {
+        setCorGanhouPerdeu("#FF0000");
     }
 
-    function verificaLetraVerdadeiro(letra) {
-        const listaPalavra = palavraChave.split("");
-        listaPalavra.map((item, i) => {
-            item === letra ? alteraAcertou(item, i) : console.log("errou");
-        });
-    }
-
-    function alteraAcertou(letra, i) {
-        const listaPalavra = palavraChaveUnderline;
-        listaPalavra[i] = letra;
-        console.log(listaPalavra);
-    }
-    function enviaInputChute() {
-        console.log(chuteDigitado);
-        setChuteDigitado("");
-    }
-
-    function selecionaLetra(i) {
-        if (letrasEscolhidas.includes(i)) {
-            return "letraDesabilitada";
-        } else {
-            return "letraHabilitada";
-        }
-    }
-
+    console.log("-----------------------começa aqui -----------------");
+    console.log(corGanhouPerdeu);
     return (
         <>
-            <Jogo palavra={palavraChaveUnderline} alteraPalavra={() => escolhePalavra(palavras)} />
-            <div className='container-letters'>
-                {alfabeto.map((item) => (
-                    <Letras
-                        clickLetra={!prontoParaJogar ? null : () => letraClicada(item)}
-                        letras={alfabeto}
-                        classLetras={!prontoParaJogar ? "letraDesabilitada" : selecionaLetra(item)}
-                        value={item}
-                    />
-                ))}
-            </div>
+            <Jogo
+                palavras={palavras}
+                palavraChaveUnderline={palavraChaveUnderline}
+                palavraChave={palavraChave}
+                setPalavraChave={setPalavraChave}
+                setLetrasEscolhidas={setLetrasEscolhidas}
+                numeroAleatorio={numeroAleatorio}
+                setPalavraChaveUnderline={setPalavraChaveUnderline}
+                setProntoParaJogar={setProntoParaJogar}
+                erroImagem={erroImagem}
+                setGanhouPerdeu={setGanhouPerdeu}
+                ganhouPerdeu={ganhouPerdeu}
+                setContadorDeErro={setContadorDeErro}
+                setErroImagem={setErroImagem}
+                setChuteDigitado={setChuteDigitado}
+                ganhouTrocaCor={corGanhouPerdeu}
+                setCorGanhouPerdeu={setCorGanhouPerdeu}
+                corGanhouPerdeu={corGanhouPerdeu}
+            />
+
+            <Letras
+                letras={alfabeto}
+                letrasEscolhidas={letrasEscolhidas}
+                setLetrasEscolhidas={setLetrasEscolhidas}
+                palavraChave={palavraChave}
+                setContadorDeErro={setContadorDeErro}
+                contadorDeErro={contadorDeErro}
+                palavraChaveUnderline={palavraChaveUnderline}
+                setPalavraChaveUnderline={setPalavraChaveUnderline}
+                prontoParaJogar={prontoParaJogar}
+                setErroImagem={setErroImagem}
+                ganhouTrocaCor={ganhouTrocaCor}
+                perdeuTrocaCor={perdeuTrocaCor}
+            />
+
             <Chute
-                clickChuteDigitado={enviaInputChute}
-                onchange={(e) => setChuteDigitado(e.target.value)}
-                value={chuteDigitado}
+                chuteDigitado={chuteDigitado}
+                setChuteDigitado={setChuteDigitado}
+                palavraChave={palavraChave}
+                setGanhouPerdeu={setGanhouPerdeu}
+                setErroImagem={setErroImagem}
+                prontoParaJogar={prontoParaJogar}
+                ganhouTrocaCor={ganhouTrocaCor}
+                perdeuTrocaCor={perdeuTrocaCor}
             />
         </>
     );

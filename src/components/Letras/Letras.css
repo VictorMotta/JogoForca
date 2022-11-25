@@ -1,3 +1,8 @@
+.container-letters {
+    width: 48%;
+    margin: 30px auto;
+}
+
 .letraDesabilitada {
     width: 40px;
     height: 40px;
@@ -23,4 +28,10 @@
     color: #39739d;
     margin: 5px;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .container-letters {
+        width: 65%;
+    }
 }
