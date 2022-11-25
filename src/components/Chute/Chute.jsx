@@ -11,7 +11,16 @@ const Chute = ({
 }) => {
     function enviaInputChute() {
         if (prontoParaJogar) {
-            if (chuteDigitado === palavraChave) {
+            if (
+                chuteDigitado
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[^a-zA-Z\s]/g, "") ===
+                palavraChave
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[^a-zA-Z\s]/g, "")
+            ) {
                 ganhouMostrar();
             } else {
                 perdeuMostrar();
@@ -26,7 +35,7 @@ const Chute = ({
             <input
                 data-test='guess-input'
                 disabled={prontoParaJogar ? null : "disabled"}
-                onChange={(e) => setChuteDigitado(e.target.value.toLowerCase())}
+                onChange={(e) => setChuteDigitado(e.target.value)}
                 type='text'
                 value={chuteDigitado}
             />

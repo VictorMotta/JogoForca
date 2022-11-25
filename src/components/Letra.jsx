@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const Letra = ({ letrasEscolhidas, clicadoLetra, classLetra, value }) => {
-    console.log(letrasEscolhidas);
     return (
         <>
             <button

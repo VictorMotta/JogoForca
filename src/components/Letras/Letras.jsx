@@ -15,8 +15,6 @@ const Letras = ({
     ganhouMostrar,
     perdeuMostrar,
 }) => {
-    console.log(palavraChave);
-
     function selecionaLetra(i) {
         if (letrasEscolhidas.includes(i)) {
             return "letraDesabilitada";
@@ -37,7 +35,7 @@ const Letras = ({
 
         if (listaPalavra.indexOf(letra) >= 0) {
             listaPalavra.map((item, i) => {
-                if (item === letra) {
+                if (item.normalize("NFD").replace(/[^a-zA-Z\s]/g, "") === letra) {
                     console.log("acertou");
                     alteraAcertou(item, i);
                     verificaGanhouPerdeu();
