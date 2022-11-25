@@ -41,16 +41,17 @@ function App({ palavras }) {
     const [prontoParaJogar, setProntoParaJogar] = useState(false);
     const [contadorDeErro, setContadorDeErro] = useState(0);
     const [erroImagem, setErroImagem] = useState("./assets/forca0.png");
-
     const [corGanhouPerdeu, setCorGanhouPerdeu] = useState("#000000");
 
     function ganhouMostrar() {
+        setChuteDigitado("");
         setPalavraChaveUnderline(palavraChave.split(""));
         setCorGanhouPerdeu("#27AE60");
         setProntoParaJogar(false);
     }
 
     function perdeuMostrar() {
+        setChuteDigitado("");
         setPalavraChaveUnderline(palavraChave.split(""));
         setCorGanhouPerdeu("#FF0000");
         setProntoParaJogar(false);

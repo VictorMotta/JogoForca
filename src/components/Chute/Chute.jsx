@@ -25,11 +25,16 @@ const Chute = ({
             <h1>Já sei a palavra!</h1>
             <input
                 data-test='guess-input'
-                onChange={(e) => setChuteDigitado(e.target.value)}
+                disabled={prontoParaJogar ? null : "disabled"}
+                onChange={(e) => setChuteDigitado(e.target.value.toLowerCase())}
                 type='text'
                 value={chuteDigitado}
             />
-            <button data-test='guess-button' onClick={enviaInputChute}>
+            <button
+                disabled={prontoParaJogar ? null : "disabled"}
+                data-test='guess-button'
+                onClick={enviaInputChute}
+            >
                 Chutar
             </button>
         </div>

@@ -89,6 +89,7 @@ const Letras = ({
         <div className='container-letters'>
             {letras.map((item) => (
                 <Letra
+                    letrasEscolhidas={letrasEscolhidas}
                     key={item}
                     clicadoLetra={!prontoParaJogar ? null : () => letraClicada(item)}
                     classLetra={!prontoParaJogar ? "letraDesabilitada" : selecionaLetra(item)}

@@ -11,7 +11,6 @@ const Jogo = ({
     setPalavraChaveUnderline,
     setProntoParaJogar,
     erroImagem,
-    setGanhouPerdeu,
     setContadorDeErro,
     setErroImagem,
     setChuteDigitado,
