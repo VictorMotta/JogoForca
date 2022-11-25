@@ -12,8 +12,8 @@ const Letras = ({
     setPalavraChaveUnderline,
     prontoParaJogar,
     setErroImagem,
-    ganhouTrocaCor,
-    perdeuTrocaCor,
+    ganhouMostrar,
+    perdeuMostrar,
 }) => {
     console.log(palavraChave);
 
@@ -59,7 +59,7 @@ const Letras = ({
 
     function verificaGanhouPerdeu(contador) {
         if (!palavraChaveUnderline.includes("_")) {
-            ganhouTrocaCor();
+            ganhouMostrar();
         }
 
         switch (contador) {
@@ -80,7 +80,7 @@ const Letras = ({
                 break;
             case 6:
                 setErroImagem("./assets/forca6.png");
-                perdeuTrocaCor();
+                perdeuMostrar();
                 break;
         }
     }

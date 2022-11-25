@@ -32,7 +32,6 @@ const Jogo = ({
         setPalavraChave(palavraChaveAlterada);
         alteraPalavraParaUnderline(listaChave);
         setLetrasEscolhidas([]);
-        setGanhouPerdeu("");
         setContadorDeErro(0);
         setErroImagem("./assets/forca0.png");
         setChuteDigitado("");

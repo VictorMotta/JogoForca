@@ -41,15 +41,19 @@ function App({ palavras }) {
     const [prontoParaJogar, setProntoParaJogar] = useState(false);
     const [contadorDeErro, setContadorDeErro] = useState(0);
     const [erroImagem, setErroImagem] = useState("./assets/forca0.png");
-    const [ganhouPerdeu, setGanhouPerdeu] = useState("");
+
     const [corGanhouPerdeu, setCorGanhouPerdeu] = useState("#000000");
 
-    function ganhouTrocaCor() {
+    function ganhouMostrar() {
+        setPalavraChaveUnderline(palavraChave.split(""));
         setCorGanhouPerdeu("#27AE60");
+        setProntoParaJogar(false);
     }
 
-    function perdeuTrocaCor() {
+    function perdeuMostrar() {
+        setPalavraChaveUnderline(palavraChave.split(""));
         setCorGanhouPerdeu("#FF0000");
+        setProntoParaJogar(false);
     }
 
     console.log("-----------------------começa aqui -----------------");
@@ -66,12 +70,10 @@ function App({ palavras }) {
                 setPalavraChaveUnderline={setPalavraChaveUnderline}
                 setProntoParaJogar={setProntoParaJogar}
                 erroImagem={erroImagem}
-                setGanhouPerdeu={setGanhouPerdeu}
-                ganhouPerdeu={ganhouPerdeu}
                 setContadorDeErro={setContadorDeErro}
                 setErroImagem={setErroImagem}
                 setChuteDigitado={setChuteDigitado}
-                ganhouTrocaCor={corGanhouPerdeu}
+                ganhouMostrar={corGanhouPerdeu}
                 setCorGanhouPerdeu={setCorGanhouPerdeu}
                 corGanhouPerdeu={corGanhouPerdeu}
             />
@@ -87,19 +89,18 @@ function App({ palavras }) {
                 setPalavraChaveUnderline={setPalavraChaveUnderline}
                 prontoParaJogar={prontoParaJogar}
                 setErroImagem={setErroImagem}
-                ganhouTrocaCor={ganhouTrocaCor}
-                perdeuTrocaCor={perdeuTrocaCor}
+                ganhouMostrar={ganhouMostrar}
+                perdeuMostrar={perdeuMostrar}
             />
 
             <Chute
                 chuteDigitado={chuteDigitado}
                 setChuteDigitado={setChuteDigitado}
                 palavraChave={palavraChave}
-                setGanhouPerdeu={setGanhouPerdeu}
                 setErroImagem={setErroImagem}
                 prontoParaJogar={prontoParaJogar}
-                ganhouTrocaCor={ganhouTrocaCor}
-                perdeuTrocaCor={perdeuTrocaCor}
+                ganhouMostrar={ganhouMostrar}
+                perdeuMostrar={perdeuMostrar}
             />
         </>
     );

@@ -6,15 +6,15 @@ const Chute = ({
     palavraChave,
     setErroImagem,
     prontoParaJogar,
-    ganhouTrocaCor,
-    perdeuTrocaCor,
+    ganhouMostrar,
+    perdeuMostrar,
 }) => {
     function enviaInputChute() {
         if (prontoParaJogar) {
             if (chuteDigitado === palavraChave) {
-                ganhouTrocaCor();
+                ganhouMostrar();
             } else {
-                perdeuTrocaCor();
+                perdeuMostrar();
                 setErroImagem("./assets/forca6.png");
             }
         }
