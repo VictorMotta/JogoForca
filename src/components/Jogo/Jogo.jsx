@@ -39,8 +39,7 @@ const Jogo = ({
 
     function mostraPalavra() {
         let stringUnderline = palavraEscolhidaUnderline.toString();
-        console.log(palavraChave);
-        console.log(stringUnderline);
+
         return (
             <span data-test='word' data-answer={palavraChave ? palavraChave : "word"}>
                 {stringUnderline.replace(/,/g, " ")}

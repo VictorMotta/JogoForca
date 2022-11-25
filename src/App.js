@@ -57,8 +57,6 @@ function App({ palavras }) {
         setProntoParaJogar(false);
     }
 
-    console.log("-----------------------começa aqui -----------------");
-    console.log(corGanhouPerdeu);
     return (
         <>
             <Jogo
