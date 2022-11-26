@@ -4,7 +4,7 @@ const Letra = ({ letrasEscolhidas, clicadoLetra, classLetra, value }) => {
             <button
                 data-test='letter'
                 disabled={
-                    letrasEscolhidas.includes(value) || classLetra === "letraDesabilitada"
+                    letrasEscolhidas.includes(value) || classLetra === "StyledLetraDesabilitada"
                         ? "disabled"
                         : null
                 }
