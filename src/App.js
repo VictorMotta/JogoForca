@@ -115,6 +115,7 @@ function App({ palavras }) {
                 setChuteDigitado={setChuteDigitado}
                 palavraChave={palavraChave}
                 setErroImagem={setErroImagem}
+                forca6={forca6}
                 prontoParaJogar={prontoParaJogar}
                 ganhouMostrar={ganhouMostrar}
                 perdeuMostrar={perdeuMostrar}

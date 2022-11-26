@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Chute = ({
+    forca6,
     chuteDigitado,
     setChuteDigitado,
     palavraChave,
@@ -24,7 +25,7 @@ const Chute = ({
                 ganhouMostrar();
             } else {
                 perdeuMostrar();
-                setErroImagem("./assets/forca6.png");
+                setErroImagem(forca6);
             }
         }
     }
