@@ -1,8 +1,10 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+import { createGlobalStyle } from "styled-components";
 
+const GlobalStyled = createGlobalStyle`
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
 html,
 body,
 div,
@@ -127,3 +129,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+
+`;
+
+export default GlobalStyled;

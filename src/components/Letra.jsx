@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Letra = ({ letrasEscolhidas, clicadoLetra, classLetra, value }) => {
     return (
         <>
