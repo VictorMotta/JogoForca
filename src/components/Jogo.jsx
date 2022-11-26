@@ -93,7 +93,7 @@ const StyledImageErr = styled.div`
         justify-content: center;
         background-color: #fff;
         img {
-            width: 50%;
+            width: 60%;
             background-color: #fff;
         }
     }
@@ -131,7 +131,9 @@ const StyledChooseWordShowWord = styled.div`
             word-wrap: normal;
         }
         button {
-            margin-top: 50px;
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
         }
     }
 `;
@@ -146,6 +148,5 @@ const StyledChute = styled.div`
         width: 100%;
         height: 15%;
         background-color: #fff;
-        padding-top: 20px;
     }
 `;
