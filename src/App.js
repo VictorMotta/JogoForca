@@ -51,8 +51,6 @@ function App({ palavras }) {
     const [erroImagem, setErroImagem] = useState(forcaInicial);
     const [corGanhouPerdeu, setCorGanhouPerdeu] = useState("#000000");
 
-    console.log(palavraChave);
-
     function ganhouMostrar() {
         setChuteDigitado("");
         setPalavraChaveUnderline(palavraChave.split(""));

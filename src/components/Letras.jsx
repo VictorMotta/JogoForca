@@ -41,18 +41,15 @@ const Letras = ({
             .normalize("NFD")
             .replace(/[^a-zA-Z\s]/g, "")
             .split("");
-        console.log(letra);
-        console.log(listaPalavraAlterada.includes(letra));
+
         if (listaPalavraAlterada.includes(letra)) {
             listaPalavraAlterada.map((item, i) => {
                 if (item === letra) {
-                    console.log("acertou");
                     alteraAcertou(item, i);
                     verificaGanhouPerdeu();
                 }
             });
         } else {
-            console.log("errou");
             const contador = contadorDeErro + 1;
             setContadorDeErro(contador);
             verificaGanhouPerdeu(contador);
